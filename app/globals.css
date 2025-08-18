@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .heroBtn {
+        @apply px-6 py-2 capitalize text-gray-500 cursor-pointer text-sm hover:text-[#F7AB0A]/80;
+    }
+
+    .proj-height {
+        height: calc(100vh - 18px)
+    }
+
+    .contact-input {
+        @apply outline-none bg-slate-400/10 rounded-sm border-b px-6 py-4 border-[#333333] text-gray-500 placeholder-gray-500 transition-all focus:border-gray-200 focus:text-gray-200 hover:border-gray-200;
+    }
+    
+    .loader {
+        display: inline-block;
+        position: relative;
+        width: 100px;
+        height: 100px;
+        background: #F7AB0A;
+        transform: rotateX(65deg) rotate(45deg);
+        transform: perspective(200px) rotateX(65deg) rotate(45deg); 
+        color: #fff;
+        animation: layers1 1s linear infinite alternate;
+    }
+
+    .loader:after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(255, 255, 255, 0.7);
+        animation: layerTr 1s linear infinite alternate;
+    }
+
+    @keyframes layers1 {
+        0% {
+            box-shadow: 0px 0px 0 0px
+        }
+
+        90%,
+        100% {
+            box-shadow: 20px 20px 0 -4px
+        }
+    }
+
+    @keyframes layerTr {
+        0% {
+            transform: translate(0, 0) scale(1)
+        }
+
+        100% {
+            transform: translate(-25px, -25px) scale(1)
+        }
+    }
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(36, 36, 36);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
