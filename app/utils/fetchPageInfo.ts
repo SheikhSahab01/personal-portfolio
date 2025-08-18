@@ -1,12 +1,13 @@
 import { PageInfo } from "@/typings";
-import { getBaseUrl } from "./getBaseUrl";
+import { groq } from "next-sanity";
+import { sanityClient } from "@/sanity";
 
-export const fetchPageInfo= async () => {
-     const req = await fetch(`${getBaseUrl()}/api/getPageInfo`,{
-          cache : "no-store"
-      });
-     const data = await req.json();
-     const pageInfo : PageInfo = data.pageInfo;
-     // console.log(pageInfo);
-     return pageInfo;
+export const fetchPageInfo = async () => {
+  try {
+    const query = groq`*[_type == "pageInfo"][0]`;
+    const pageInfo: PageInfo = await sanityClient.fetch(query);
+    return pageInfo;
+  } catch (err) {
+    return {} as PageInfo;
+  }
 }

@@ -1,5 +1,6 @@
 "use client"
 import {motion} from "framer-motion"
+import Image from 'next/image'
 import React from 'react'
 import { Projects } from "@/typings"
 import { urlFor } from "@/sanity"
@@ -18,12 +19,16 @@ const Projectscomp = ({mProjects}: Props) => {
                 {mProjects?.map( (oneproject, i) => (
                     <div key={oneproject._id} className="w-screen flex-shrink-0  snap-center flex flex-col space-y-5
                     items-center justify-center px-10 md:px-20 proj-height">
-                    <motion.img className="h-[100px] w-[100px] md:h-[130px] md:w-[200px] rounded-lg " src={urlFor(oneproject.projectImage).url()} alt="proj_img" />
+                    <motion.div className="h-[100px] w-[100px] md:h-[130px] md:w-[200px] rounded-lg relative overflow-hidden">
+                        <Image src={urlFor(oneproject.projectImage).url()} alt="proj_img" fill className="object-cover rounded-lg" unoptimized />
+                    </motion.div>
                     <div className="flex flex-col items-center justify-start max-w-6xl">
                         <h4 className="text-3xl">Case Study {i + 1} of {mProjects.length}: {oneproject?.projectTitle}</h4>
                         <div className="flex items-start gap-1 mt-4">
                             {oneproject?.technologies.map( tech => (
-                                <motion.img key={tech._id} className="h-7 w-7 rounded-full object-cover object-center" src={urlFor(tech.projectImage).url()} />
+                                <motion.div key={tech._id} className="h-7 w-7 rounded-full relative overflow-hidden">
+                                    <Image src={urlFor(tech.projectImage).url()} alt="" fill className="object-cover rounded-full" unoptimized />
+                                </motion.div>
                             ))}
                         </div>
                         <ul className="list-disc space-y-2 ml-5 text-sm mt-1">

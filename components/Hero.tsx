@@ -3,6 +3,7 @@ import React from 'react';
 import { Cursor,  useTypewriter } from 'react-simple-typewriter';
 import BackgroundCircle from './BackgroundCircle';
 import Link from 'next/link';
+import Image from 'next/image';
 import { PageInfo } from '@/typings';
 import { urlFor } from '@/sanity';
 
@@ -20,7 +21,15 @@ const Hero = ({pageInfo}: Props) => {
     return (
         <div className="flex flex-col space-y-8 justify-center items-center h-screen text-center overflow-hidden">
             <BackgroundCircle />
-            <img src={urlFor(pageInfo?.heroImage).url()} alt='Personal_image' className='relative rounded-full h-40 w-40 object-cover object-top mx-auto'/>
+            <Image
+                src={urlFor(pageInfo?.heroImage).url()}
+                alt='Personal_image'
+                width={160}
+                height={160}
+                className='relative rounded-full h-40 w-40 object-cover object-top mx-auto'
+                priority
+                unoptimized
+            />
             <div className="z-20">
                 <h2 className="text-sm text-gray-500 uppercase pb-2 tracking-[15px]">{pageInfo?.role}</h2>
                 <h1 className="text-2xl lg:text-4xl font-semibold px-10"><span>{text}</span><Cursor cursorColor="#F7AB0A" /></h1>
