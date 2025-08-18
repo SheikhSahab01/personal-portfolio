@@ -1,7 +1,8 @@
 import {Skills} from "@/typings";
+import { getBaseUrl } from "./getBaseUrl";
 
 export const fetchSkill = async () => {
-    const req = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getSkills`,{
+    const req = await fetch(`${getBaseUrl()}/api/getSkills`,{
         cache : "no-store"
     });
     const data = await req.json();

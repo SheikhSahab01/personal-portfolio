@@ -1,7 +1,8 @@
 import { Social } from "@/typings";
+import { getBaseUrl } from "./getBaseUrl";
 
 export const fetchSocial = async () => {
-     const req = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getSocial`,{
+     const req = await fetch(`${getBaseUrl()}/api/getSocial`,{
           cache : "no-store"
       });
      const data = await req.json();

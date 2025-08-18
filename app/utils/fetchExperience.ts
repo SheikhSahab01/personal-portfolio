@@ -1,7 +1,8 @@
 import { Experience } from "@/typings";
+import { getBaseUrl } from "./getBaseUrl";
 
 export const fetchExperience = async () => {
-     const req = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getExperience`,{
+     const req = await fetch(`${getBaseUrl()}/api/getExperience`,{
           cache : "no-store"
       });
      const data = await req.json();

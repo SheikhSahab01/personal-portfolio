@@ -1,7 +1,8 @@
 import { PageInfo } from "@/typings";
+import { getBaseUrl } from "./getBaseUrl";
 
 export const fetchPageInfo= async () => {
-     const req = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getPageInfo`,{
+     const req = await fetch(`${getBaseUrl()}/api/getPageInfo`,{
           cache : "no-store"
       });
      const data = await req.json();
