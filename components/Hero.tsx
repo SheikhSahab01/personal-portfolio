@@ -31,14 +31,15 @@ const Hero = ({pageInfo}: Props) => {
                 unoptimized
             />
             <div className="z-20">
-                <h2 className="text-sm text-gray-500 uppercase pb-2 tracking-[15px]">{pageInfo?.role}</h2>
-                <h1 className="text-2xl lg:text-4xl font-semibold px-10"><span>{text}</span><Cursor cursorColor="#F7AB0A" /></h1>
-                <div className="pt-5">
-                    <Link href="#about"><button className="heroBtn">About</button></Link>
-                    <Link href="#experience"><button className="heroBtn">Experience</button></Link>
-                    <Link href="#skills"><button className="heroBtn">skills</button></Link>
-                    <Link href="#projects"><button className="heroBtn">Projects</button></Link>
-                </div>
+                <h2 className="text-sm text-gray-500 dark:text-gray-300 uppercase pb-0 tracking-[15px]">{pageInfo?.role}</h2>
+                <small className='text-sm text-gray-500 dark:text-gray-300 uppercase pb-3 inline-block tracking-[6px]'>@Simplify VMS</small>
+                <h1 className="text-2xl lg:text-4xl font-semibold px-10 text-black dark:text-white"><span>{text}</span><Cursor cursorColor="#F7AB0A" /></h1>
+                {/* <div className="pt-5">
+                    <Link href="#about"><button className="heroBtn bg-gray-200 dark:bg-slate-800 text-black dark:text-gray-200">About</button></Link>
+                    <Link href="#experience"><button className="heroBtn bg-gray-200 dark:bg-slate-800 text-black dark:text-gray-200">Experience</button></Link>
+                    <Link href="#skills"><button className="heroBtn bg-gray-200 dark:bg-slate-800 text-black dark:text-gray-200">skills</button></Link>
+                    <Link href="#projects"><button className="heroBtn bg-gray-200 dark:bg-slate-800 text-black dark:text-gray-200">Projects</button></Link>
+                </div> */}
             </div>
         </div>
     )
