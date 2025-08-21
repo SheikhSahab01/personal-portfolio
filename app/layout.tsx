@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import FloatingNav from "@/components/FloatingNav";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,8 +15,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Read theme from localStorage or system preference (client only)
+  // Use a default class for SSR, and let client JS update it
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="">
       <head>
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
       </head>
