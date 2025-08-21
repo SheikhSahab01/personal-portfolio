@@ -6,6 +6,7 @@ import Hero from "@/components/Hero";
 import WorkExperience from "@/components/WorkExperience";
 import Skillscomp from "@/components/Skillscomp";
 import Projectscomp from "@/components/Projectscomp";
+import FloatingNav from "@/components/FloatingNav";
 
 import { Experience, PageInfo, Projects, Skills, Social } from "@/typings";
 import { fetchPageInfo } from "./utils/fetchPageInfo";
@@ -29,12 +30,14 @@ const Home = async () => {
   const socials: Social[] = await fetchSocial();
 
   return (
-    <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-scroll z-0 overflow-x-hidden">
+    <div className="bg-white dark:bg-[rgb(36,36,36)] text-black dark:text-white h-screen snap-y snap-mandatory overflow-scroll z-0 overflow-x-hidden">
       
       <Header socials = {socials}/>
+      <FloatingNav />
+
     
       <section id="hero" className="snap-start">
-        <Hero pageInfo = {pageInfo} />
+        <Hero pageInfo = {pageInfo}  />
       </section>
 
       <section id="about" className="snap-center">

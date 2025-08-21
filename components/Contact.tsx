@@ -23,10 +23,10 @@ const Contact = ({pageInfo}: Props) => {
     }
     
     return (
-        <div className="h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-7xl px-5 justify-evenly items-center mx-auto ">
-            <motion.h3 initial={{letterSpacing: "80px"}} whileInView={{letterSpacing: "20px"}}  transition={{duration: 1.3}} className="absolute top-24 uppercase tracking-[20px] text-2xl text-gray-500 z-10">contact</motion.h3>
+        <div className="h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-7xl px-4 md:px-5 justify-evenly items-center mx-auto bg-white dark:bg-[rgb(36,36,36)] text-black dark:text-white">
+            <motion.h3 initial={{letterSpacing: "80px"}} whileInView={{letterSpacing: "20px"}}  transition={{duration: 1.3}} className="absolute top-24 uppercase tracking-[20px] text-2xl text-gray-500 dark:text-gray-300 z-10">contact</motion.h3>
             <div className="p-5 w-full flex flex-col space-y-2 md:space-y-5">
-                <h4 className="text-lg md:text-4xl font-semibold text-center md:mb-3">
+                <h4 className="text-lg md:text-4xl font-semibold text-center md:mb-3 text-black dark:text-white">
                     Shoot me a message. Lets Talk
                 </h4>
             <div className="flex flex-col md:flex-row gap-5 md:mx-auto ">
@@ -47,12 +47,12 @@ const Contact = ({pageInfo}: Props) => {
 
                 <form onSubmit={handleSubmit(onSubmit)} action="" className="flex flex-col space-y-2 w-full md:w-fit">
                     <div className="flex flex-col md:flex-row space-y-2 md:space-x-2 md:space-y-0" >
-                        <input {...register('name')} type="text" placeholder="Name" className="contact-input"/>
-                        <input {...register('email')} type="email" placeholder="Email" className="contact-input" />
+                        <input {...register('name')} type="text" placeholder="Name" className="contact-input bg-gray-100 dark:bg-slate-800 text-black dark:text-white"/>
+                        <input {...register('email')} type="email" placeholder="Email" className="contact-input bg-gray-100 dark:bg-slate-800 text-black dark:text-white" />
                     </div>
-                    <input {...register('subject')} type="text"  placeholder="Subject" className="contact-input"/>
-                    <textarea {...register('formmessage')} placeholder="Message" className="contact-input" />
-                    <button type="submit" className="bg-[#F7AB0A] text-center text-black rounded-sm py-3 px-10 font-semibold ">submit</button>
+                    <input {...register('subject')} type="text"  placeholder="Subject" className="contact-input bg-gray-100 dark:bg-slate-800 text-black dark:text-white"/>
+                    <textarea {...register('formmessage')} placeholder="Message" className="contact-input bg-gray-100 dark:bg-slate-800 text-black dark:text-white" />
+                    <button type="submit" className="bg-[#F7AB0A] text-center text-black dark:text-white rounded-sm py-3 px-10 font-semibold ">submit</button>
                 </form>
             </div>
 
