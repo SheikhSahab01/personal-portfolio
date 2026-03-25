@@ -14,6 +14,7 @@ import { fetchExperience } from "./utils/fetchExperience";
 import { fetchSocial } from "./utils/fetchSocial";
 import { fetchProject } from "./utils/fetchProjects";
 import { fetchSkill } from "./utils/fetchSkills";
+import { unstable_noStore as noStore } from "next/cache";
 type Props = {
   pageInfo: PageInfo[];
   experience: Experience[];
