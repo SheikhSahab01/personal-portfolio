@@ -21,8 +21,13 @@ type Props = {
   projects: Projects[];
   socials: Social[];
 };
+// Ensure the homepage reflects Sanity content changes on Vercel without waiting for a rebuild.
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 const Home = async () => {
+  // Prevent Next.js from caching Sanity responses on Vercel.
+  noStore();
   const pageInfo: PageInfo = await fetchPageInfo();
   const experience: Experience[] = await fetchExperience();
   const skills: Skills[] = await fetchSkill();
